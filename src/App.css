@@ -2,37 +2,113 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.seaside {
+  /* background: linear-gradient(180deg, #85c7d5, black); */
+  background-image: url("./deepsea.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.sorrow {
+  animation: sink 10s ease-in;  /*forwards*/
+}
+
+@keyframes sink {
+  0%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100vh);
+    opacity: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+input {
+  width: 35%;
+  padding: 5px;
+  border-radius: 25px;
+  margin-top: 5vh;
+  margin-right: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+button {
+  background-color:  black;
   color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 10px #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:active {
+  opacity: 0.5;
+}
+
+img {
+  position: fixed;
+}
+
+#fish-1 {
+  width: 13vw;
+  top: 20vh;
+  left: 10vw;
+  transition: transform 1s ease-in-out;
+}
+
+#fish-1:hover {
+  transform: rotate(360deg);
+}
+
+#fish-2 {
+  width: 15vw;
+  bottom: 35vh;
+  right: 10vw;
+  transition: transform 1s ease-in-out;
+}
+
+#fish-2:hover {
+  transform: translateX(-100%);
+}
+
+#algae {
+  width: 11vw;
+  bottom: 0vh;
+  left: 30vw;
+}
+
+#algae:hover  {
+  animation: shakey-shake 1s ease-in forwards;
+}
+
+@keyframes shakey-shake {
+  0% {
+    transform: rotate(-45deg);
   }
-  to {
-    transform: rotate(360deg);
+  33% {
+    transform: rotate(0);
   }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+#seashell {
+  width: 3vw;
+  bottom: 1vh;
+  right: 55vw;
+  transition: transform 4s ease-in-out;
+}
+
+#seashell:hover {
+  transform: translateY(-80vh);
 }
